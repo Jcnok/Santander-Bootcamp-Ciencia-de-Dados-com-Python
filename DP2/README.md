@@ -1,13 +1,12 @@
 # ETL e Análise de Gastos dos Deputados Federais
 
-<img src="./img/photo.jpg" referrerpolicy="same-origin" style="display: block; object-fit: cover; border-radius: 0px; width: 100%; height: 30vh; opacity: 1; object-position: center 50%;">
-
+<img src="./img/photo.jpg" >
 
 ## Objetivo
 
 O objetivo deste projeto é extrair, transformar e carregar dados relacionados aos gastos dos deputados federais do Brasil. Em seguida, os dados serão analisados para identificar padrões de gastos do ano em exercicío.
 
-<a id="ancora"></a>
+<a name="ancora"></a>
 
 # Índice
 
@@ -17,6 +16,7 @@ O objetivo deste projeto é extrair, transformar e carregar dados relacionados a
 4. [EDA](#ancora4)   
 5. [Conclusão](#ancora5)   
 
+<a name="ancora"></a>
 
 <a id="ancora1"></a>
 
@@ -55,19 +55,7 @@ deputados.head()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -159,7 +147,7 @@ deputados.shape
 
 
 
-    (513, 9)
+    (512, 9)
 
 
 
@@ -184,7 +172,7 @@ for id in deputados.id:
 
 ```python
 # Foram coletados 100 registros de cada deputado para esse exemplo.
-len(gastos[512])
+len(gastos[510])
 ```
 
 
@@ -217,19 +205,7 @@ gastos[0].tail()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -258,6 +234,69 @@ gastos[0].tail()
     <tr>
       <th>95</th>
       <td>2023</td>
+      <td>3</td>
+      <td>COMBUSTÍVEIS E LUBRIFICANTES.</td>
+      <td>7516348</td>
+      <td>Nota Fiscal Eletrônica</td>
+      <td>4</td>
+      <td>2023-03-13</td>
+      <td>5913</td>
+      <td>192.38</td>
+      <td>http://www.camara.leg.br/cota-parlamentar/nota...</td>
+      <td>BOSQUE DA SAUDE COM. COMB. LTDA</td>
+      <td>02823845000102</td>
+      <td>192.38</td>
+      <td>0.0</td>
+      <td></td>
+      <td>1918715</td>
+      <td>0</td>
+      <td>220593</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>2023</td>
+      <td>3</td>
+      <td>COMBUSTÍVEIS E LUBRIFICANTES.</td>
+      <td>7516337</td>
+      <td>Nota Fiscal Eletrônica</td>
+      <td>4</td>
+      <td>2023-03-25</td>
+      <td>6050</td>
+      <td>248.54</td>
+      <td>http://www.camara.leg.br/cota-parlamentar/nota...</td>
+      <td>BOSQUE DA SAUDE COM. COMB. LTDA</td>
+      <td>02823845000102</td>
+      <td>248.54</td>
+      <td>0.0</td>
+      <td></td>
+      <td>1918714</td>
+      <td>0</td>
+      <td>220593</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>2023</td>
+      <td>8</td>
+      <td>COMBUSTÍVEIS E LUBRIFICANTES.</td>
+      <td>7591454</td>
+      <td>Nota Fiscal Eletrônica</td>
+      <td>4</td>
+      <td>2023-08-11</td>
+      <td>659931</td>
+      <td>30.90</td>
+      <td>http://www.camara.leg.br/cota-parlamentar/nota...</td>
+      <td>BURITI COM.DE DERIVADOS DE PET LTDA</td>
+      <td>10827927000153</td>
+      <td>30.90</td>
+      <td>0.0</td>
+      <td></td>
+      <td>1959288</td>
+      <td>0</td>
+      <td>220593</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>2023</td>
       <td>4</td>
       <td>COMBUSTÍVEIS E LUBRIFICANTES.</td>
       <td>7553208</td>
@@ -277,7 +316,7 @@ gastos[0].tail()
       <td>220593</td>
     </tr>
     <tr>
-      <th>96</th>
+      <th>99</th>
       <td>2023</td>
       <td>8</td>
       <td>COMBUSTÍVEIS E LUBRIFICANTES.</td>
@@ -294,69 +333,6 @@ gastos[0].tail()
       <td>0.0</td>
       <td></td>
       <td>1965161</td>
-      <td>0</td>
-      <td>220593</td>
-    </tr>
-    <tr>
-      <th>97</th>
-      <td>2023</td>
-      <td>2</td>
-      <td>COMBUSTÍVEIS E LUBRIFICANTES.</td>
-      <td>7499508</td>
-      <td>Nota Fiscal Eletrônica</td>
-      <td>4</td>
-      <td>2023-02-16</td>
-      <td>7121</td>
-      <td>153.13</td>
-      <td>http://www.camara.leg.br/cota-parlamentar/nota...</td>
-      <td>COMERCIAL AMAZONIA 02 DE PETROLEO EIRELI</td>
-      <td>09001879000322</td>
-      <td>153.13</td>
-      <td>0.0</td>
-      <td></td>
-      <td>1909326</td>
-      <td>0</td>
-      <td>220593</td>
-    </tr>
-    <tr>
-      <th>98</th>
-      <td>2023</td>
-      <td>2</td>
-      <td>COMBUSTÍVEIS E LUBRIFICANTES.</td>
-      <td>7501717</td>
-      <td>Nota Fiscal Eletrônica</td>
-      <td>4</td>
-      <td>2023-02-20</td>
-      <td>7130</td>
-      <td>152.94</td>
-      <td>http://www.camara.leg.br/cota-parlamentar/nota...</td>
-      <td>COMERCIAL AMAZONIA 02 DE PETROLEO EIRELI</td>
-      <td>09001879000322</td>
-      <td>152.94</td>
-      <td>0.0</td>
-      <td></td>
-      <td>1910831</td>
-      <td>0</td>
-      <td>220593</td>
-    </tr>
-    <tr>
-      <th>99</th>
-      <td>2023</td>
-      <td>2</td>
-      <td>COMBUSTÍVEIS E LUBRIFICANTES.</td>
-      <td>7502535</td>
-      <td>Nota Fiscal Eletrônica</td>
-      <td>4</td>
-      <td>2023-02-22</td>
-      <td>7138</td>
-      <td>144.48</td>
-      <td>http://www.camara.leg.br/cota-parlamentar/nota...</td>
-      <td>COMERCIAL AMAZONIA 02 DE PETROLEO EIRELI</td>
-      <td>09001879000322</td>
-      <td>144.48</td>
-      <td>0.0</td>
-      <td></td>
-      <td>1910831</td>
       <td>0</td>
       <td>220593</td>
     </tr>
@@ -399,19 +375,7 @@ deputados.head()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -486,7 +450,7 @@ len(total)
 
 
 
-    48861
+    49023
 
 
 
@@ -499,19 +463,7 @@ total.tail()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -656,7 +608,7 @@ total.shape
 
 
 
-    (48861, 18)
+    (49023, 18)
 
 
 
@@ -675,10 +627,10 @@ total.isnull().sum()
     codDocumento            0
     tipoDocumento           0
     codTipoDocumento        0
-    dataDocumento         271
+    dataDocumento         270
     numDocumento            0
     valorDocumento          0
-    urlDocumento         7800
+    urlDocumento         7803
     nomeFornecedor          0
     cnpjCpfFornecedor       0
     valorLiquido            0
@@ -707,19 +659,7 @@ total.head()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -853,8 +793,8 @@ total.numRessarcimento.value_counts()
 
 
 
-         42155
-    0     6706
+         42314
+    0     6709
     Name: numRessarcimento, dtype: int64
 
 
@@ -875,19 +815,7 @@ total.head()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1014,8 +942,8 @@ total.drop_duplicates()
 print(total.shape)
 ```
 
-    (48861, 15)
-    (48861, 15)
+    (49023, 15)
+    (49023, 15)
     
 
 
@@ -1024,25 +952,25 @@ total.info()
 ```
 
     <class 'pandas.core.frame.DataFrame'>
-    Int64Index: 48861 entries, 0 to 99
+    Int64Index: 49023 entries, 0 to 99
     Data columns (total 15 columns):
      #   Column             Non-Null Count  Dtype  
     ---  ------             --------------  -----  
-     0   ano                48861 non-null  float64
-     1   mes                48861 non-null  float64
-     2   tipoDespesa        48861 non-null  object 
-     3   codDocumento       48861 non-null  float64
-     4   tipoDocumento      48861 non-null  object 
-     5   codTipoDocumento   48861 non-null  float64
-     6   numDocumento       48861 non-null  object 
-     7   valorDocumento     48861 non-null  float64
-     8   nomeFornecedor     48861 non-null  object 
-     9   cnpjCpfFornecedor  48861 non-null  object 
-     10  valorLiquido       48861 non-null  float64
-     11  valorGlosa         48861 non-null  float64
-     12  codLote            48861 non-null  float64
-     13  parcela            48861 non-null  float64
-     14  id                 48861 non-null  int64  
+     0   ano                49023 non-null  float64
+     1   mes                49023 non-null  float64
+     2   tipoDespesa        49023 non-null  object 
+     3   codDocumento       49023 non-null  float64
+     4   tipoDocumento      49023 non-null  object 
+     5   codTipoDocumento   49023 non-null  float64
+     6   numDocumento       49023 non-null  object 
+     7   valorDocumento     49023 non-null  float64
+     8   nomeFornecedor     49023 non-null  object 
+     9   cnpjCpfFornecedor  49023 non-null  object 
+     10  valorLiquido       49023 non-null  float64
+     11  valorGlosa         49023 non-null  float64
+     12  codLote            49023 non-null  float64
+     13  parcela            49023 non-null  float64
+     14  id                 49023 non-null  int64  
     dtypes: float64(9), int64(1), object(5)
     memory usage: 6.0+ MB
     
@@ -1056,19 +984,7 @@ total.describe()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1088,42 +1004,42 @@ total.describe()
   <tbody>
     <tr>
       <th>count</th>
-      <td>48861.0</td>
-      <td>48861.000000</td>
-      <td>4.886100e+04</td>
-      <td>48861.000000</td>
-      <td>48861.000000</td>
-      <td>48861.000000</td>
-      <td>48861.000000</td>
-      <td>4.886100e+04</td>
-      <td>48861.000000</td>
-      <td>48861.000000</td>
+      <td>49023.0</td>
+      <td>49023.000000</td>
+      <td>4.902300e+04</td>
+      <td>49023.000000</td>
+      <td>49023.000000</td>
+      <td>49023.000000</td>
+      <td>49023.000000</td>
+      <td>4.902300e+04</td>
+      <td>49023.000000</td>
+      <td>49023.000000</td>
     </tr>
     <tr>
       <th>mean</th>
       <td>2023.0</td>
-      <td>4.433515</td>
-      <td>6.536420e+06</td>
-      <td>1.788277</td>
-      <td>1348.981213</td>
-      <td>1342.749334</td>
-      <td>6.182949</td>
-      <td>1.669583e+06</td>
+      <td>4.483120</td>
+      <td>6.539757e+06</td>
+      <td>1.790486</td>
+      <td>1348.023479</td>
+      <td>1341.657333</td>
+      <td>6.317398</td>
+      <td>1.670704e+06</td>
       <td>0.000041</td>
-      <td>180534.142138</td>
+      <td>180450.891663</td>
     </tr>
     <tr>
       <th>std</th>
       <td>0.0</td>
-      <td>2.399120</td>
-      <td>2.535850e+06</td>
-      <td>1.879662</td>
-      <td>3332.206329</td>
-      <td>3323.586816</td>
-      <td>125.331093</td>
-      <td>6.661678e+05</td>
-      <td>0.006398</td>
-      <td>49932.747346</td>
+      <td>2.432382</td>
+      <td>2.533548e+06</td>
+      <td>1.880205</td>
+      <td>3338.725924</td>
+      <td>3330.063181</td>
+      <td>127.441130</td>
+      <td>6.655180e+05</td>
+      <td>0.006387</td>
+      <td>49941.876047</td>
     </tr>
     <tr>
       <th>min</th>
@@ -1142,12 +1058,12 @@ total.describe()
       <th>25%</th>
       <td>2023.0</td>
       <td>2.000000</td>
-      <td>7.500171e+06</td>
+      <td>7.500292e+06</td>
       <td>0.000000</td>
-      <td>169.910000</td>
-      <td>168.020000</td>
+      <td>170.000000</td>
+      <td>168.220000</td>
       <td>0.000000</td>
-      <td>1.909773e+06</td>
+      <td>1.909818e+06</td>
       <td>0.000000</td>
       <td>160558.000000</td>
     </tr>
@@ -1155,25 +1071,25 @@ total.describe()
       <th>50%</th>
       <td>2023.0</td>
       <td>4.000000</td>
-      <td>7.535658e+06</td>
+      <td>7.536204e+06</td>
       <td>1.000000</td>
-      <td>270.020000</td>
-      <td>269.000000</td>
+      <td>270.050000</td>
+      <td>269.250000</td>
       <td>0.000000</td>
-      <td>1.929174e+06</td>
+      <td>1.929519e+06</td>
       <td>0.000000</td>
-      <td>204457.000000</td>
+      <td>204456.000000</td>
     </tr>
     <tr>
       <th>75%</th>
       <td>2023.0</td>
       <td>6.000000</td>
-      <td>7.572639e+06</td>
+      <td>7.573799e+06</td>
       <td>4.000000</td>
-      <td>1147.330000</td>
-      <td>1134.610000</td>
+      <td>1144.740000</td>
+      <td>1132.080000</td>
       <td>0.000000</td>
-      <td>1.949787e+06</td>
+      <td>1.950428e+06</td>
       <td>0.000000</td>
       <td>220588.000000</td>
     </tr>
@@ -1181,12 +1097,12 @@ total.describe()
       <th>max</th>
       <td>2023.0</td>
       <td>9.000000</td>
-      <td>7.612783e+06</td>
+      <td>7.613905e+06</td>
       <td>4.000000</td>
       <td>124000.000000</td>
       <td>124000.000000</td>
       <td>14050.000000</td>
-      <td>1.970613e+06</td>
+      <td>1.971259e+06</td>
       <td>1.000000</td>
       <td>226553.000000</td>
     </tr>
@@ -1205,31 +1121,31 @@ total.nomeFornecedor.value_counts().head(25)
 
 
 
-    TAM                                                              3113
-    GOL                                                              1428
-    031 - 302 NORTE - CASCOL COMBUSTIVEIS PARA VEICULOS LTDA          935
-    AZUL                                                              865
-    AUTO POSTO CINCO ESTRELAS LTDA                                    665
-    UBER DO BRASIL TECNOLOGIA LTDA.                                   601
-    063 - 311 SUL - CASCOL COMBUSTIVEIS PARA VEICULOS LTDA            597
-    WMS COMERCIO DE ARTIGOS DE PAPELARIA LTDA-ME                      530
-    AUTO POSTO AEROPORTO LTDA                                         501
-    AUTO POSTO 303 NORTE LTDA                                         474
-    CELULAR FUNCIONAL                                                 464
-    Telefônica Brasil S.A. VIVO                                       413
-    AMORETTO CAFES EXPRESSO LTDA                                      322
-    076 - MELHOR 10 - CASCOL COMBUSTIVEIS PARA VEICULOS LTDA          290
-    RAMAL                                                             271
+    TAM                                                              3185
+    GOL                                                              1385
+    031 - 302 NORTE - CASCOL COMBUSTIVEIS PARA VEICULOS LTDA          950
+    AZUL                                                              856
+    AUTO POSTO CINCO ESTRELAS LTDA                                    678
+    063 - 311 SUL - CASCOL COMBUSTIVEIS PARA VEICULOS LTDA            603
+    UBER DO BRASIL TECNOLOGIA LTDA.                                   580
+    WMS COMERCIO DE ARTIGOS DE PAPELARIA LTDA-ME                      536
+    AUTO POSTO AEROPORTO LTDA                                         506
+    AUTO POSTO 303 NORTE LTDA                                         488
+    CELULAR FUNCIONAL                                                 457
+    Telefônica Brasil S.A. VIVO                                       404
+    AMORETTO CAFES EXPRESSO LTDA                                      324
+    076 - MELHOR 10 - CASCOL COMBUSTIVEIS PARA VEICULOS LTDA          294
+    RAMAL                                                             270
+    CEMIG DISTRIBUIÇÃO S.A.                                           259
     POSTO DA TORRE EIRELI EPP                                         256
-    CEMIG DISTRIBUIÇÃO S.A.                                           254
-    Claro NXT Telecomunicações S.A                                    230
+    Claro NXT Telecomunicações S.A                                    233
+    AUTO POSTO CONCORDE LTDA                                          231
     DRA4 DERIVADOS DE PETROLEO LTDA                                   230
-    AUTO POSTO CONCORDE LTDA                                          228
-    CEEE - Companhia Estadual de Distribuição de Energia Elétrica     213
-    COMPANHIA DE ELETRICIDADE DO ESTADO DA BAHIA                      209
-    BRASAL COMBUSTIVEIS LTDA                                          195
-    BELIZE COMPANY AUTO POSTO LTDA                                    176
-    AUTO POSTO JK LTDA                                                166
+    CEEE - Companhia Estadual de Distribuição de Energia Elétrica     217
+    COMPANHIA DE ELETRICIDADE DO ESTADO DA BAHIA                      213
+    BRASAL COMBUSTIVEIS LTDA                                          201
+    BELIZE COMPANY AUTO POSTO LTDA                                    172
+    AUTO POSTO 302 SUL LTDA                                           167
     Name: nomeFornecedor, dtype: int64
 
 
@@ -1244,7 +1160,7 @@ fornecedores = total.nomeFornecedor.value_counts().index.tolist()
 ```python
 # Ordenando para comparar erros de digitação etc...
 fornecedores.sort(reverse=True)
-fornecedores
+fornecedores[:10]
 ```
 
 
@@ -1259,1008 +1175,18 @@ fornecedores
      'viewclinic ltda',
      'viação novo horizonte LTDA',
      'via Brasil MT-246 Concessionaria',
-     'valdiney maciel da silva',
-     'use comunicações e telecomunicações ltda',
-     'turbo cloud',
-     'triunfo service ltda',
-     'tecnodinamica importacao e comercio de m',
-     'strutura desing comercio e locadora de bens moveis',
-     'stada hoteis hangar scp',
-     'sobral & Palacio petroleo LTDA',
-     'serrana fm',
-     'segpol serviços de segurança eletrônica ltda',
-     'sTelefônica Brasil S.A. VIVO',
-     'ronaldo guedine ribeiro',
-     'rede grill auto posto LTDA',
-     'real materias de limpeza e alimentos ltda',
-     'print & copy comercio eireli me',
-     'prefeitura municipal de campo grande',
-     'posto z 14 ltda',
-     'posto vargas de viçosa',
-     'posto servsul',
-     'posto sao domingos ltda',
-     'posto santo onofre',
-     'posto meneguetti',
-     'posto fernão dias',
-     'posto expresso amazonas',
-     'posto eirelli',
-     'posto de combustiveis martins ltda',
-     'posto cidade encontro ltda',
-     'posto campeao',
-     'plano ltda',
-     'organizações Sartori LTDA',
-     'novo posto tucuman ltda',
-     'novo posto seabra',
-     'nelson benedito consultoria imobiliaria ltda',
-     'mobile automotiva eireli',
-     'mirante locadora limitada',
-     'mc assessoria eireli me',
-     'maxipred-assessoria predial lt',
-     'mav - veículos e serviços ltda',
-     'marcio ferreira neto informativo ms',
-     'macedo e carlomagno comunicaçao e marketing ltda',
-     'ludo comercio',
-     'lucilandia lopes ferreira',
-     'litoralmania',
-     'lima administradora',
-     'latam',
-     'largo hotel manaus ltda',
-     'javascript:;Kalunga SA',
-     'h2L equipamentos e sistemas LTDA',
-     'grafica imprimex comunicação visual',
-     'grafer comercial',
-     'gilmar niquini e filhos empreend.L',
-     'gerson noguerol barros',
-     'flickr pro monthly',
-     'ff propaganda e marketting eireli',
-     'eder florencio yanaguita',
-     'coworking.etc.br',
-     'corporate plaza buziness center',
-     'consult web',
-     'condominio do edificio dr justo antonio',
-     'comunicação bras de sinal em midia outdoor ltda',
-     'companhia jaguari de energia s.a.',
-     'comercial mapes',
-     'combustiveis ceu azul ltda',
-     'cavis- propaganda e publicidade eireli',
-     'av comunicação Multimidia LTDA',
-     'auto posto xanxere',
-     'auto posto saint gerard ltda',
-     'auto posto neves',
-     'auto posto fidelidade.',
-     'auto posto ferreira e levenhagem',
-     'auto posto duque tocantins ltda',
-     'auto posto de combustiveis ferrari ltda',
-     'auto posto confiança',
-     'auto posto canpoo do areiao ltda',
-     'auto posto beija flor',
-     'auto posto arpoador ltda',
-     'auto posto Parecis ltda',
-     'auto posto Lorinho Jacareí',
-     'antonio neres silva radio e tv ms',
-     'ana celia oliveira matos',
-     'americanas sa - 0854',
-     'americanas sa - 0240',
-     'americanas sa - 0035',
-     'alex willian lopes',
-     'afonso ferreira',
-     'adobe systems software ireland ltd',
-     'Zoom Vídeo Communications',
-     'Zoom Video Communications Inc.',
-     'Zoom Video Communications Inc',
-     'Zoom Video Communications',
-     'Zoom Video Communication Inc',
-     'Zoom Video  Communications.inc',
-     'Zoom Tecnologia LTDA',
-     'Zoom Inc.',
-     'Zoom Inc',
-     'Zoantropo Filmes',
-     'Zapier Inc.',
-     'Zapier',
-     'ZUMM EMPREENDIMENTOS LTDA',
-     'ZUFFO SOLUCOES TECNOLOGICAS LTDA',
-     'ZOOM VÍDEO COMMUNICATIONS INC.',
-     'ZOOM VÍDEO COMMUNICATIONS',
-     'ZOOM VIDEO COMUNICATIONS',
-     'ZOOM VIDEO COMMUNICATIONS',
-     'ZOOM',
-     'ZONTA AUTO POSTO LTDA',
-     'ZEMAR TURISMO LTDA',
-     'ZAZ  NATAL LTDA',
-     'ZARUR, COUTINHO E CARVALHO COMUNICACAO LTDA',
-     'ZAPP PAPELARIA E INFORMATICA EIRELI-EPP',
-     'ZANIN E VIEIRA LTDA',
-     'ZANFER IMÓVEIS LTDA-ME',
-     'ZANDONÁ GARUVA',
-     'ZANDONA COMBUSTIVEIS',
-     'ZANDONA & CIA LTDA',
-     'ZAISOV COMERCIO DE COMBUSTIVEIS LTDA',
-     'ZACHEU & ZACHEU EMBALAGENS LTDA EPP',
-     'Yasmin Breckenfeld Reck 066779227925',
-     'Yalla Transportes e Serviços LTDA',
-     'YNOVE COPIADORAS,  COM. DE MAQ. COPIADORAS, SUPRIMENTOS LTDA',
-     'YES LOCACAO DE IMOVEIS LTDA',
-     'YELLOW DATA - SOLUÇÕESINTELIGENTES EM TI LTDA',
-     'YELLOW DATA - SOLUCOES INTELIGENTES EM TI LTDA.',
-     'YARA MARIA LIRA PAIVA E SILVA',
-     'YAMAGUCHI EMPREENDIMENTOS LTDA',
-     'Y V R GOMES COMUNICAÇÃO E MIDIA LTDA',
-     'Y V R GOMES COMUNICACAO E MIDIA LTDA',
-     'XIQUE XIQUE ASA SUL',
-     'XIMENES NEGÓCIOS IMOBILIÁRIOS',
-     'XIMENES NEGOCIOS IMOBILIARIOS LTDA',
-     'XAVIER & DEGGERONE LTDA.',
-     'Warley Pereira do Nascimento',
-     'Waleska Aparecida Rocha dos Anjos',
-     'WS COMERCIO DE DERIVADOS DE PETROLEO E LUBRIFICANTE EIRELI',
-     'WS COMERCIO DE COMBUSTIVEIS',
-     'WORLDNET / NBS ARIQUEMES',
-     'WORLD PAPER PAPELARIA LIVRARIA E INFORMATICA LTDA',
-     'WORKING ASSOCIAÇÃO DE INTEGRAÇÃO PROFISSIONAL',
-     'WORDFENCE - INOVE',
-     'WN MOREIRA & CIA LTDA',
-     'WMS SUPERMERCADOS DO BRASIL LTDA.',
-     'WMS SUPERMERCADOS DO BRASIL LTDA',
-     'WMS COMERCIO DE ARTIGOS DE PAPELARIA LTDA-ME.',
-     'WMS COMERCIO DE ARTIGOS DE PAPELARIA LTDA-ME',
-     'WMS COMERCIO DE ARTIGOS DE PAPELARIA LTDA',
-     'WL COMERCIO DE COMBUSTIVEIS LTDA',
-     'WJJ COMERCIO DE DERIVADOS DE PETROLEO LTDA',
-     'WISETECHTI',
-     'WISETECH - LOCADORA DE EQUIPAMENTOS ELETRONICOS LTDA',
-     'WINDSOR ADMINISTRAÇÃO DE HOTEIS E SERVIÇOS LTDA',
-     'WINDSOR ADMINISTRACAO DE HOTEIS E SERVICOS LTDA',
-     'WILMA ANA NOGUEIRA SANTOS',
-     'WILLIAN RODRIGUES DOS SANTOS',
-     'WILKER CAMPOS CHAGAS',
-     'WGTI SOLUCOES INTELIGENTES LTDA',
-     'WGTI - SOLUCOES INTELIGENTES',
-     'WG RIBEIRAO AUTO POSTO LTDA',
-     'WF3 COMERCIO DE COMBUSTIVEIS LTDA',
-     'WEVERSON SARMENTO DA PAIXÃO',
-     'WELLINGTON SIQUEIRA SANTOS FILHO 78068118500',
-     'WELLINGTON SIQUEIRA SANTOS FILHO',
-     'WELLINGTON DE ALMEIDA GOMES',
-     'WELLINGTON ANTONIO DA SILVA',
-     'WELESON LOPES',
-     'WEBERTY CARLOS CHAVES GEROLINETO',
-     'WEBERTE BERNARDO LEMOS',
-     'WDA TAXI AEREO LTDA - EPP',
-     'WDA TAXI AEREO LTDA',
-     'WAY SERVIÇOS DIGITAIS LTDA',
-     'WAY SERVICOS DIGITAIS LTDA',
-     'WASHINGTON ADM.IMOVEIS S/C LTDA',
-     'WANG COMUNICAÇÃO LTDA',
-     'WANG COMUNICACAO LTDA',
-     'WANDYCLER MARCOS SOUZA DA SILVA JUNIOR',
-     'WALTER TANNUS FREITAS',
-     'WALMIR NOGUEIRA SANTOS',
-     'WALESKA APARECIDA ROCHA DOS ANJOS 05626826190',
-     'WALDERNEY BARBOSA PANTALEÃO',
-     'WAGNER RONIERE MENEZES DE OLIVEIRA',
-     'WAGNER GONÇALVES CAMPOS NETO',
-     'WAD PAPELARIA MANGUEIRAL',
-     'WAAP TECNOLOGIA DA INFORMACAO LTDA',
-     'W.MENDES ASSIST.TÉC E LOCAÇÃO  DE ELETRODOMÉSTICOS',
-     'W. A. BARRETO & CIA LTDA',
-     'W S POSTO DE COMBUSTIVEIS LTDA',
-     'W S M DA SILVA - ME',
-     'W R D POSTO DE COMBUSTIVEIS LTDA',
-     'W L VISANI LTDA',
-     'Voz e Pesquisa Tocantins LTDA',
-     'Vjsa ADM. DE CONDOMINIOS LTDA',
-     'Vivo Telefonica do Brasil s/a',
-     'Vivo - Telefonica Brasil S.A.',
-     'Vivo',
-     'Viva Bem Imobiliária LTDA',
-     'Vital Brasil Empreendimentos Imobiliário SPE Ltda',
-     'Virginia de França Dantas',
-     'Vila Paladino Gastro Beer LTDA',
-     'Vidanova Comercio de Alimentos LTDA',
-     'Victor Savas Jacques 08154245906',
-     'Victor Barros Jacobina Ribeiro 86088222530',
-     'Vero Internet',
-     'Valberlino Mota ME',
-     'VYP GESTÃO DE NEGÓCIOS IMOBILIARIOS LTDA',
-     'VSP PARTNER',
-     'VSP INFO LTDA',
-     'VRF COMERCIO DE PRODUTOS DE LIMPEZA LTDA',
-     'VPL COMERCIO DE PETROLEO LTDA',
-     'VOZ E PESQUISA TOCANTINS LTDA',
-     'VOXLINK TECNOLOGIA LTDA',
-     'VOCE TELECOMUNICACOES LTDA',
-     'VN Construtora Limitada',
-     'VML COMERCIO DE DERIVADOS DE PETROLEO LTDA',
-     'VL Veículos Ltda - EPP',
-     'VL VEICULOS LTDA',
-     'VJSA ADMINISTRADORA DE CONDOMINIOS LTDA',
-     'VIZION GESTAO DE NEGOCIOS EMPRESARIAIS LTDA',
-     'VIX VITORIA INFORMATICA LTDA',
-     'VIVO S.A.',
-     'VIVO S.A',
-     'VIVA NEGOCIOS IMOBILIARIOS & CONSULTORIA EM MARKETING LTDA',
-     'VIVA BEM IMOBILIARIA LTDA',
-     'VITÓRIA TECNOLOGIA DA INFORMAÇÃO LTDA',
-     'VITORIA TECNOLOGIA DA INFORMACAO LTDA',
-     'VITORIA REGIA COMERCIO DE PETROLEO LTDA',
-     'VITORIA COMERCIO E TRANSPORTES LTDA',
-     'VITOR ALMEIDA DE SOUZA 04089267242',
-     'VISUAL OUTDOOR LTDA',
-     'VISUAL CLIPAGEM',
-     'VISTAR PRESTACAO DE SERVICOS DE DIGITACAO LTDA',
-     'VIRTUAL COMERCIO E SERVIÇOS LTDA',
-     'VIRTUAL COMERCIO E SERVICOS LTDA',
-     'VIP.COM INFORMATICA E SERVIÇOS',
-     'VINICIUS DELEVATI',
-     'VINICIUS CANSANCAO E CIA LTDA',
-     'VINICIUS BULIGON',
-     'VILLELA PRODUÇÕES LTDA LCTV',
-     'VILLAGE VEICULOS LTDA EPP',
-     'VILA RICA COMBUSTIVEIS LTDA',
-     'VILA DE GOIANA COMERCIO DE COMBUSTIVEIS LTDA',
-     'VILA BELA COMERCIO DE COMBUSTIVEL LTDA',
-     'VILA 202 COMERCIO DE ALIMENTOS LTDA',
-     'VIGOR VIGILANCIA LTDA',
-     'VIGHOR EMPREENDIMENTOS LTDA',
-     'VIEWCLINIC LTDA',
-     'VIEIRA DE SOUSA SOCIEDADE INDIVIDUAL DE ADVOCACIA',
-     'VIDEOMAR REDE NORDESTE S/A',
-     'VIDEO 1 E SELOS POSTAIS LTDA',
-     'VICTOR SAVAS JACQUES 08154245906',
-     'VICENDI COMERCIO DE ALIMENTOS LTDA',
-     'VIBRA ENERGIA S.A',
-     'VIATV EVENTOS LTDA.',
-     'VIAPAULISTA S/A',
-     'VIANA E VIEIRA LTDA',
-     'VIACAO OURO E PRATA S A',
-     'VIACAO NOVO HORIZONTE LTDA SSA',
-     'VIACAO GARCIA LTDA',
-     'VIA NORTE SUL COMÈRCIO DE COMBUSTIVEIS LTDA',
-     'VIA NORTE SUL COMERCIO DE COMBUSTIVEIS LTDA',
-     'VIA MIDIA PRODUCOES E SERVICOS LTDA',
-     'VIA LOCADORA DE AUTOMOVEIS LTDA',
-     'VIA COMBUSTIVEIS LTDA',
-     'VETORIALNET INFORMÁTICA E SERVIÇO DE INTERNET LTDA',
-     'VETORIALNET INFORMATICA E SERVICOS DE INTERNET LTDA',
-     'VERISURE BRASIL MONITORAMENTO DE ALARMES S.A',
-     'VERISURE BRASIL MONITORAMENTO',
-     'VERBO COMUNICAÇÃO',
-     'VERA FOGACA',
-     'VER-O-FATO NOTICIAS LTDA',
-     'VER BRASILIA COMUNICACAO LTDA',
-     'VENERÁVEL ORDEM TERCEIRA SÃO FRANCISCO DA PENITENCIA DA CIDADE SP',
-     'VENERAVEL ORDEM TERCEIRA DE SAO FRANCISCO DA PENITENCIA DA CIDADE DE SAO PAULO',
-     'VELOSO COMERCIO DE COMBUSTIVEIS LTDA',
-     'VELEIROS MAR HOTEL',
-     'VEIA PRODUCOES, EVENTOS E MARKETING LTDA',
-     'VEGA GRAFICA DIGITAL LTDA',
-     'VDK COMERCIO DE COMBUSTIVEIS',
-     'VASCONCELOS RESTAURENTE LTDA',
-     'VARELA TANAN ADVOGADOS',
-     'VANESSA RODRIGES FERNANDES',
-     'VANDREI MARTINS DE OLIVEIRA',
-     'VANAB POSTO DE SERV. E CONV. LTDA',
-     'VALÉRIA COSTA GUIMARAES - ME',
-     'VALTIARA A. D. M. PRATI',
-     'VALPOSTO COMBUSTIVEIS LTDA',
-     'VALPARAISO REPRESENTACAO COMERCIAL DE COMBUSTIVEIS LTDA',
-     'VALOR LOCAÇÕES EIRELI - ME',
-     'VALOR LOCACOES LTDA',
-     'VALOR ECONOMICO S.A.',
-     'VALID CERTIFICADORA DIGITAL LTDA',
-     'VALENTIM & FERNANDES LTDA',
-     'VALE INFORMATICA',
-     'VALE IMÓVEIS - Sala 07',
-     'VALE IMÓVEIS - Sala 06',
-     'VALE IMÓVEIS - Sala 05',
-     'VALE IMÓVEIS - Sala 04',
-     'VALE IMÓVEIS',
-     'VALE IMOVEIS LTDA',
-     'VALE DOS CARAJÁS PARK HOTEL LTDA - EPP',
-     'VALDISIA LOPES POSTOS EIRELI',
-     'VALDIR DIAS ADVOGADOS ASSOCIADOS',
-     'VALDEMARIN 4 COMERCIO DE COMBUSTIVEIS E DERIVADOS',
-     'VALDEIR NICOLODI EIRELI EIRELI',
-     'VALBA COMERCIO DE COMBUSTIVEIS LTDA',
-     'V8 COMERCIO DE DERIVADOS DE PETROLEO LTDA',
-     'V.I.P Segurança LTDA',
-     'V. BRAMBILA E CIA LTDA',
-     'V W SERVICOS EIRELI',
-     'V T AQUINO LTDA',
-     'V N CONSTRUTORA LTDA',
-     'V K COMERCIO DE DERIVADOS DE PETROLEO LTDA ME',
-     'V FRANCISCO DA SILVA EPP',
-     'V B A FERREIRA  LTDA',
-     'V ANVERSA SOLUCOES ADMINISTRATIVAS',
-     'Unidas SA',
-     'Umberto Imóveis Ltda',
-     'UWBR VOX Telecomunicações S/A',
-     'USINA DE LATICINIOS JUSSARA S A',
-     'USE SERVICE TECNOLOGIA LTDA',
-     'URISSANÊ COMUNICAÇÃO lLTDA',
-     'URISSANE COMUNICACAO LTDA',
-     'URBANISMO SERVIÇOS E EVENTOS LTDA',
-     'URBANISMO SERVICOS E EVENTOS LTDA',
-     'URBAN MATERIAIS PARA ESCRITORIO E UNIFORMES EM GERAL LTDA',
-     'UPSIDE AGENCIA DIGITAL LTDA-ME',
-     'UO INSTALAÇÕES, MONTAGEM, MIDIA E EVENTOS LTDA',
-     'UNIÃO MATERIAIS DE ESCRITÓRIO LTDA',
-     'UNIVERSO PETROLEO LTDA',
-     'UNIVERSO ONLINE S/A',
-     'UNINOTE SERVIÇOS GRÁFICOS',
-     'UNINOTE SERVICOS GRAFICOS LTDA',
-     'UNIDOS COM DE COMB LTDA',
-     'UNIDAS S/A',
-     'UNIDAS LOCADORA S.A.',
-     'UNIDAS LOCADORA S.A',
-     'UNICA TECNOLOGIA COMERCIAL LTDA.',
-     'UNIAO TRANSP DE ENCOMENDAS E COM DE VEICULOS LTDA',
-     'UNIAO COMERCIAL DE SERVICOS E PRODUTOS LTDA',
-     'ULTRAMAQ MÁQUINAS E SERVIÇOS LTDA',
-     'ULTRAMAQ MAQUINAS E SERVICOS LTDA',
-     'UIRAMUTAM PALACE HOTEL',
-     'UBERPRINT LTDA',
-     'UBER DO BRASIL TECNOLOGIA LTDA.',
-     'UBER DO BRASIL TECNOLOGIA LTDA',
-     'UBER',
-     'UBA PETRO LTDA',
-     'U. C. MONTEIRO',
-     'U T B COMERCIO DE COMBUSTIVEL E LUBRIFICANTES LTDA',
-     'TÁXI LEGAL',
-     'Três Marias Agropecuária e eventos Eireli-EPP',
-     'Três Marias Agropecuária e Eventos Eireli-EPP',
-     'Tropical Corretora de Imóveis e Construções LTDA',
-     'Tri Hotel Caxias LTDA',
-     'Tres Barras Combustiveis Ltda',
-     'Transportadora Leal Ltda',
-     'Topper Investimentos, Bens e Capital - Eireli',
-     'Tokio Marine Seguradora SA',
-     'Tim S.A.',
-     'Tiffany Hotel Ltda',
-     'Tiago Rodrigues',
-     'Thiago Martins dos Santos ME',
-     'Thaís Amélia de Oliveira Gomes',
-     'Thais dos Santos Portilho de Paulo',
-     'Thais Soares dos Santos Grupo ZMX',
-     'Territorio Empreendimentos Imobiliarios',
-     'Telefônica Brasil S/A',
-     'Telefônica Brasil S.A. VIVO',
-     'Telefônica Brasil S.A.',
-     'Telefonica Brasil SA',
-     'Telefonica Brasil S.a.',
-     'Telefonica Brasil S.A.',
-     'Tecno Indústria e Comércio de Computadores ltda.',
-     'Technocopy Equipamentos Suprimentos e Servicos Ltd',
-     'TWITTER BRASIL REDE DE INFORMACAO LTDA',
-     'TURNPIKE 4321 AUTO POSTO BAR E LANCHONETE BAZAR E SERVICOS AUTOMOTIVOS LTDA.',
-     'TURNPIKE 4321 AUTO POSTO BAR E LANCHONETE BAZAR E',
-     'TUDO AZUL INFORMATICA E TECNOLOGIA LTDA - ME',
-     'TUCUMA CENTER POSTO LTDA',
-     'TTS SOLUÇÕES EM TI LTDA',
-     'TTS SOLUCOES EM INFORMATICA LTDA',
-     'TSM EMPREENDIMENTOS IMOBILIARIOS LTDA',
-     'TS CONDOMINIOS E IMÓVEIS S/S LTDA',
-     'TS COMERCIO DE ARTIGOS DE ARMARINHO LTDA',
-     'TROPICAL GASOLINAS E SERV AUTOMOTIVOS LT',
-     'TROPEIRO RESTAURANTE EIRELLI EPP',
-     'TROCAUTO VEICULOS',
-     'TRIUNFO SERVICE LTDA',
-     'TRIPE COMUNICAÇÃO E SERVIÇOS DE CONSULTORIA EM PUBLICIDADE LTDA',
-     'TRIPE COMUNICACAO E SERVICOS DE CONSULTORIA EM PUBLICIDADE LTDA',
-     'TRIART COMUNICACAO E MARKETING LTDA',
-     'TRIADE AGRIBUSINESS E ADMINISTRAÇÃO DE BENS PROPRIOS LTDA',
-     'TREVO DERIVADOS DE PETROLEO LTDA',
-     'TRES MARIAS AGROPECUARIA E EVENTOS LTDA',
-     'TREM UAI COMERCIO VAREJISTA DE ALIMENTOS LTDA',
-     'TRELRIUM COMERCIO DE COMBUSTIVEIS E CONVENIENCIA LTDA ME',
-     'TRAQUETE COMERCIO DE COMBUSTIVEIS LTDA EPP',
-     'TRANSSERVICE PETROLEO LTDA',
-     'TRANSPORTES GRITSCH LTDA',
-     'TRANSPORTES E COMERCIO NOVO HORIZONTE LTDA',
-     'TRANSPIAUI PETROLEO LTDA',
-     'TRANSMOURA LOCADORA DE VEICULOS LTDA.',
-     'TRANSBELCAR TRANSPORTE DE VEICULOS LTDA',
-     'TRANSBELCAR TRANSPORTE DE VEICULOS EIRELI',
-     'TRAIRI COMERCIO DE DERIVADOS DE PETROLEO LTDA.',
-     'TRAGGA RESTAURANTE LTDA',
-     'TOURING - ECOPOSTOS COMBUSTIVEIS E SERVICOS LTDA',
-     'TOUR DE FORCE PAPELARIA E INFORMATIC LTDA',
-     'TOUR DE FORCE PAPELARIA E INFORMATI LTDA',
-     'TOTE MIDIA OUTDOORS',
-     'TOTALSERV - COM. SERV. E MANUTENCAO LTDA.',
-     'TOTALGRAF GRAFICA E EDITORA LTDA',
-     'TOTALGRAF GRAFICA E EDITORA EIRELI - EPP',
-     'TORTATTO HOTEL LTDA',
-     'TORRES COMERCIO E DERIVADOS DE PETROLEO LTDA',
-     'TORRES COMERCIO DE COMBUSTIVEIS LTDA',
-     'TORQUE CONSTRUCOES LTDA',
-     'TOPPER INVESTIMENTOS, BENS E CAPITAL LTDA',
-     'TOPCLEAN COMERCIO DE PRODUTOS DE HIGIENE LTDA',
-     'TOP COMERCIO DE COMBUSTIVEIS LTDA',
-     'TONINHO TRINTA AUTO POSTO',
-     'TONER CO SERVS LTDA',
-     'TOCA DO PEIXE',
-     'TOBIAS BARRETO SEGURANCA E SERVICOS LTDA',
-     'TMCB COMERCIO DE ALIMENTOS LTDA',
-     'TJ COMUNICACAO LTDA',
-     'TINTELIG TELECOMUNICAÇÕES LTDA',
-     'TIM SA',
-     'TIM S/A',
-     'TIM S.A.',
-     'TIM S.A',
-     'TIGRAO COMERCIO DE COMB E DERIVADOS EIRELI',
-     'TIGRA LAB ESTRATEGIA E COMUNICAÇÃO LTDA',
-     'TIGRA LAB ESTRATEGIA E COMUNICACAO LTDA',
-     'TIFOLI MOFARREJ SÃO PAULO HOTEL - POJUCA S/A',
-     'TIC POSTO LTDA V',
-     'TIC POSTO LTDA IV',
-     'TIC E TAC DE RAMOS POSTO DE SERVICOS LTDA',
-     'TIAGO SOARES DOS SANTOS',
-     'TIAGO RIBAS SIQUEIRA',
-     'TI85 CONSULTORIA EM TECNOLOGIA DA INFORMAÇÃO LTDA',
-     'TI85 CONSULTORIA EM TECNOLOGIA DA INFORMACAO LTDA',
-     'THUYA AUTO POSTO DE SERVICOS LTDA',
-     'THOME E MESQUITA LTDA',
-     'THM MAQUINAS SEMIAUTOMATICAS LTDA',
-     'THIAGO VASCONCELOS MORAIS ME',
-     'THIAGO VASCONCELOS MORAES',
-     'THIAGO OSCALIS MARTINS',
-     'THIAGO FONSECA COSTA',
-     'THIAGO BIANCONI WIGGERT 21971525804',
-     'THIAGO BARUDI 03645162917',
-     'THERESINHA HEREDIA FASSARELLA EIRELI',
-     'THE PLANT COMERCIO DE ALIMENTOS LTDA',
-     'THE BETS TREINAMENTOS MARKETING E COMUNICACAO LTDA',
-     'THAMIRES NAZARÉ DO NASCIMENTO',
-     'TH COMÉRCIO DE MÁQUINAS E EQUIPAMENTOS LTDA',
-     'TH COMERCIO DE MAQUINAS E EQUIPAMENTOS LTDA',
-     'TERRITORIAL EMPREENDIMENTOS IMOBILIARIOS LTDA.',
-     'TERRAL TAXI AEREO LTDA',
-     'TERRA DO SOL DISTRIBUIDORA DE PAPELARIA E ESCRITORIO LTDA',
-     'TERRA ASSESSORIA IMOBILIÁRIA LTDA.',
-     'TEREZINHA DE JESUS PEDROSO',
-     'TERESA C.O.DELCARO ME',
-     'TEMPERATTO RESTAURANTE LTDA',
-     'TELEMAXIMO SISTEMAS CONSULTORIA E SERVIÇOS LTDA - ME',
-     'TELEMAXIMO SISTEMAS CONSULTORIA E SERVICOS LTDA',
-     'TELEMAR NORTE LESTE S/A',
-     'TELELOK LTDA',
-     'TELELOK LOCAÇÃO DE MÓVEIS LTDA.',
-     'TELEFÔNICA BRASIL S.A. - VIVO',
-     'TELEFÔNICA BRASIL S.A.',
-     'TELEFÔNICA BRASIL S.A',
-     'TELEFONÔNICA BRASIL S.A',
-     'TELEFONICA BRASIL S.A.',
-     'TELEFONICA BRASIL  VIVO S.A.',
-     'TELEFONIA BRASIL S.A - VIVO',
-     'TELE TÁXI BELVEDERE',
-     'TEIXEIRA GRAFICA E EDITORA LTDA.',
-     'TECNOVETTI PRODUTOS E SERV. PARA ESCRITORIO LTDA',
-     'TECNOPRINTER EA SUPRIMENTOS PARA IMPRESSORA EIRELI',
-     'TECNOCOPY SERVICOS E LOCACAO DE EQUIPAMENTOS LTDA',
-     'TECNOAR SERVIÇOS DE ENGENHARIA EIRELI',
-     'TECNOAR SERVICOS DE ENGENHARIA LTDA',
-     'TECNO INDUSTRIA E COMERCIO DE COMPUTADORES LTDA',
-     'TECNICA INFORMATICA COMERCIO E REPRESENTACOES LTDA',
-     'TECNEWS CORPORATION COMÉRCIO E SERVIÇO LTDA',
-     'TECNEWS CORPORATION COMERCIO & SERVICOS LTDA',
-     'TECNEGOCIOS SOLUÇÕES EM INFORMÁTICA LTDA-ME',
-     'TECNEGOCIOS SOLUCOES EM INFORMATICA LTDA',
-     'TECHNOCOPY EQUIPAMENTOS SUPRIMENTOS E SERVICOS LTDA',
-     'TE MKT',
-     'TDA COM. COMB. LTDA',
-     'TAZZA COMERCIO DE MAQUINAS E INSUMOS LTDA',
-     'TAZZA COMERCIO DE MAQUINAS E INSUMOS EIRELI  ME',
-     'TAYPA RESTO BAR PERUANO LTDA',
-     'TAXI AEREO VALE DO MADEIRA LTDA',
-     'TAXI AEREO HERCULES LTDA.',
-     'TAXCO LOCADORA DE BENS LTDA',
-     'TAVARES COMERCIO DE COMBUSTIVEIS E LUBRIFICANTES LTDA',
-     'TATIANE ADAMES COMERCIO E PAPELARIA LTDA',
-     'TATIANA BARROS MAIA PIRES 35257887894',
-     'TATIANA BARROS MAIA PIRES',
-     'TARGINO COMERCIO DE COMBUSTIVEIS LTDA ME',
-     'TARGET RENT A CAR LTDA',
-     'TARCISO ANTONIO DE MEDEIROS CALADO FILHO',
-     'TAPPARO E FIGUEIREDO TAPPARO LTDA',
-     'TANIA CIRLEI SGARBOSSA ALVES EIRELI',
-     'TAM LINHAS AEREAS S/A.',
-     'TAM',
-     'TALTO',
-     'TALISMÃ PALLACE HOTEL',
-     'TAKIT COMUNICACAO E TECNOLOGIA',
-     'TAKEO MARUTA CONVENIENCIA - ME',
-     'TAIKAN FAST SUSHI LTDA',
-     'TAIKAN FAST FOOD SUSHI LTDA',
-     'TAGUACENTRO COMER. DE DERIV. DE PETROLEO LTDA',
-     'TAGG SERVICES LTDA',
-     'TABITA MARINHO PRODUCOES E COMUNICACAO LTDA',
-     'TABITA FERREIRA MARINHO PRODUÇÕES E COMUNICAÇÃO EIRELI',
-     'TABITA FERREIRA MARINHO PRODUCOES E COMUNICACAO LTDA',
-     'T. R. DOS SANTOS BEZERRA EPP',
-     'T. DE JESUS PEDROSO',
-     'T dos Reis Silva Eireli-TX Outdoor',
-     'T DOS REIS SILVA LTDA',
-     'São Luís Combustíveis Ltda.',
-     'SÃO JOÃO COMÉRCIO DE COMBUSTÍVEIS LTDA',
-     'Suplymax Suprimentos de Informática LTDA',
-     'Supermercado VR Comercio de Alimentos',
-     'Sudeste Foods Produtos Alimenticios',
-     'Strike Media',
-     'Streamyard, Inc.',
-     'Streamyard',
-     'Stream Yard, Inc.',
-     'Steamyard, Inc.',
-     'Solução Serviços para Condomínios Ltda',
-     'Sol da Manha Posto e Garagem Ltda',
-     'SoftHost - Empresa MH INT. REP. E INST. EM INFORMATICA LTDA',
-     'Sky Serviços de Banda Larga Ltda',
-     'Sintaxi',
-     'Sindicato dos Jornalistas Profissionais do Município do Rio de Janeiro',
-     'Simone Silva de Freitas Félix',
-     'Silva e Ramos Comercio de Combustiveis Ltda',
-     'Severino Pinheiro Vidal',
-     'Serviço Autonomo de Agua e esgoto de Alagoinhas',
-     'Sergio Guimarães Hardy',
-     'Semalo Combustiveis Ltda',
-     'Secretária  Municipal de fazenda',
-     'Sanasa Campinas',
-     'Safe Park Estacionamentos',
-     'Sabor Na Brasa Costelaria Ltda - Me',
-     'SYSCOIN TECNOLOGIA E SERVICOS LTDA',
-     'SYSCOIN TECNOLOGIA E SERVICO LTDA - ME',
-     'SYMA COMPUTADORES LTDA.',
-     'SWEET PAPER PAPELARIA EIRELI',
-     'SWAMY HOTEL - A. A. S. QUEIROZ',
-     'SUSHI GOURMET RESTAURANTE LTDA',
-     'SURF IN BOX MATERIAL ESPORTIVO LTDA - ME',
-     'SUPRIMAQ EQUIPAMENTOS PARA ESCRITORIO EIRELI',
-     'SUPREMA MOBILIDADES LTDA.',
-     'SUPREMA MOBILIDADE LTDA',
-     'SUPREMA COMERCIO DE ARTIGOS PARA LIMPEZA E FESTAS LTDA.',
-     'SUPLYMAX SUPRIMENTOS DE INFORMATICA LTDA',
-     'SUPERQUADRA BAR E RESTAURANTE LTDA',
-     'SUPERMERCADOS BH',
-     'SUPERMERCADO JACOMAR LTDA',
-     'SUPERMERCADO BAHAMAS S/A',
-     'SUPERINTENDENCIA DE AGUA E ESGOTO DE OURINHOS',
-     'SUPER TROCA DE OLEO DIMAO',
-     'SUPER POSTO TRIUNFO LTDA',
-     'SUPER POSTO PALMEIRA LTDA',
-     'SUPER POSTO JC LT',
-     'SUPER POSTO EXPRESS LTDA.',
-     'SUPER POSTO DOIS MIL LTDA',
-     'SUPER POSTO BRASIL V LTDA',
-     'SUPER POSTO 2000 LTDA',
-     'SUPER GAMES COMERCIAL LTDA',
-     'SUPER AUTO VEICULOS LTDA',
-     'SUMO COMUNICAÇÃO E MARKETING LTDA',
-     'SUMO COMUNICACAO E MARKETING LTDA',
-     'SUMMIT HOTELARIA LTDA',
-     'SUMICITY TELECOMUNICACOES S.A',
-     'SULCOP COPIADORAS E SUPRIMENTOS LTDA',
-     'SUELI TEREZINHA DE MORAIS ALMEIDA',
-     'SUDOESTE COMERCIO DE PRODUTOS AUTOMOTIVOS LTDA',
-     'SUDESTE FOODS PRODUTOS ALIMENTICIOS LTDA',
-     'SUBCONDOMÍNIO DO COMPLEXO EMP. RM TRADE CENTER - AV. REPÚBLICA DO LÍBANO 251 - PINA - RECIFE/PE',
-     'SUASSUNA FERNANDES ENGENHARIA S.A',
-     'STV COMUNICACAO LTDA',
-     'STUDIO AB GRAFICA E EDITORA LTDA',
-     'STUDIO AB - CRIATIVIDADE VISUAL EIRELI - EPP',
-     'STRUTURAL PARTICIPAÇÃO ADM IMOBILIÁRIA LTDA',
-     'STRUTURAL PARTICIPACAO E ADMINISTRACAO IMOBILIARIA LTDA',
-     'STRATUS CENTRO HOTEL LTDA ME',
-     'STILO GRAFICA E EDITORA LTDA',
-     'STILLUS TRANSPORTES',
-     'STEVAM GREGORY ROCHA POLLON',
-     'STELMAT TELEINFORMATICA LTDA',
-     'STATUS RIO AUTO SERVIÇO LTDA',
-     'STATIC TONER DO BRASIL LTDA.',
-     'STATIC TONER DO BRASIL LTDA',
-     'START AUTO POSTO',
-     'STARBUCKS BRASIL COMERCIO DE CAFES LTDA',
-     'STAR SHOPPING AUTO POSTO EIRELI',
-     'STAR EAST COMERCIO DE COMBUSTIVEIS LTDA',
-     'STANG & STANG LTDA',
-     'STANG & STANG',
-     'STAMPA OUTDOOR LTDA',
-     'STAMPA OUTDOOR EIRELI',
-     'SRX QUEZADO COMBUSTIVEIS E LUBRIFICANTES LTDA',
-     'SRX QUEZADO COMBUSTIVEIS E LUBRIFICANTES EIRELI',
-     'SRS SERVIÇOS LTDA EPP',
-     'SR SAO PAULO COMERCIO VAREJISTA DE COMBUSTIVEIS LTDA',
-     'SQS REI DO BACALHAU EIRELI',
-     'SPOLETO SUDOESTE 100 COMERCIAL  DE ALIMENTOS',
-     'SPARTA PLAN MEDIA COMUNICACAO LTDA',
-     'SP VARIEDADES E IMPORTADOS SOCIEDADE UNIPESSOAL LTDA',
-     'SP VARIEDADES E IMPORTADOS S. UNIPESSOAL LTDA',
-     'SP POSTO - COMERCIO DE COMBUSTIVEIS PARA VEICULO LTDA',
-     'SP PARK COMERCIO DE ALIMENTOS LTDA EPP',
-     'SP HOUSE IMOBILIARIA E ADMINISTRADORA LTDA',
-     'SP ATACADISTA DE ARMARINHOS LTDA',
-     'SP ATACADISTA DE ARMARINHO LTDA',
-     'SOUZACRE AGENCIA DE PUBLICIDADE LTDA',
-     'SOUZA e VITAL LTDA',
-     'SOUSA PETROLEO E SERVICOS LTDA',
-     'SOUSA E ALVES COM DE DERIVADOS DE PETRÓLEO',
-     'SOUL FLATS ADMINISTRADORA LTDA EPP',
-     'SOU PRINT SERVICOS E COMERCIOS DE IMPRESSAO DE MATERIAL PUBLICITARIO LTDA',
-     'SOS ALARMES',
-     'SORTWEB STUDIO LTDA',
-     'SONIA MARIA ASSAD MARTINS',
-     'SONHO VERDE COMBUSTIVEIS LTDA',
-     'SONAP SOCIEDADE NACIONAL DE PETROLEO LTDA',
-     'SOMMAS COMBUSTIVEIS LTDA',
-     'SOLUÇÃO NETWORK PROVEDOR LTDA',
-     'SOLFESTA TURISMO LTDA',
-     'SOLARYS SOLUCOES DIGITAIS LTDA',
-     'SOL NASCENTE COMERCIO DE COMBUSTIVEIS LTDA',
-     'SOL INVEST - HOTEL JARAGUA LTDA.',
-     'SOL G.V.COELHO COMUNICAÇÃO E MARKETING',
-     'SOL COMERCIO DE COMBUSTIVEIS LTDA',
-     'SOF SUPER TROCA DE OLEO LTDA ME',
-     'SOCIEDADE DE PETROLEO ARFLA LTDA',
-     'SOCIEDADE COMERCIAL CAVALCANTI E FILHO LTDA',
-     'SOCIEDADE COMERCIAL CANAA -LTDA',
-     'SOCIEADE ANVERSA PARTICIPAÇÕES LTDA',
-     'SOCIALBIZ COMUNICACAO ESTRATEGICA LTDA',
-     'SOCIAL IMOVEIS MBS',
-     'SOCIAL E MIDIA AGENCIA DE COMUNICACAO LTDA',
-     'SOCIAL COMUNICACAO & JORNALISMO LTDA ME',
-     'SOCIAL COMUNICACAO & JORNALISMO LTDA',
-     'SOCAPE SOCIEDADE CAXIENSE DE PETROLEO LTDA',
-     'SOBRAL E PALACIO PETROLEO LTDA',
-     'SOBRAL COMERCIO E SERVICOS LTDA',
-     'SOBRAL &amp; FILHOS COMERCIO DE COMBUSTIVEIS LTDA - PSG1',
-     'SOBRAL & PALACIO PETROLEO LTDA',
-     'SOARES REFRIGERACAO',
-     'SOARES COMERCIO E SERVICOS EIRELI',
-     'SOARES ASSESSORIACOMUNICAÇÃO E ESPORTE LTDA',
-     'SOARES ASSESSORIA COMUNICACAO E ESPORTE LTDA',
-     'SMART VEÍCULOS LTDA-ME',
-     'SMART VEICULOS LTDA',
-     'SMART SOLUÇÕES EM GESTÃO FINANCEIRA E EMPRESARIAL LTDA',
-     'SMART SOLUCOES EM GESTAO FINANCEIRA E EMPRESARIAL LTDA',
-     'SMAFF COMBUSTIVEIS LTDA',
-     'SL EMPREENDIMENTOS IMOBILIARIOS LTDA',
-     'SJ CARIRI ADM DE IMÓVEIS LTDA',
-     'SJ ADMINISTRACAO DE IMOVEIS LTDA',
-     'SJ ADMIMINSTRAÇÃO DE  IMOVEIS LTDA',
-     'SISTEMAS CONVEX LOCAÇÃO DE PRODUTOS DE INFORMÁTICA LTDA.',
-     'SISTEMA REGIONAL DE RADIODIFUSAO LTDA',
-     'SISTEMA DE COMUNICACAO GUARACY LTDA',
-     'SISTEMA CIDADE - C.A. DE OLIVEIRA SONORIZAÇÃO E DIVULGAÇÃO',
-     'SISTEGON COMERCIO DE COMBUSTIVEIS LTDA',
-     'SISNETTI INTEGRADORA DE SOLUCOES LTDA',
-     'SIQUELERO SERRAZUL AUTO POSTO LTDA',
-     'SIQUEIRA HOTEIS LTDA',
-     'SINDTAXI',
-     'SINDICATO DOS CONDUTORES AUTONOMOS DE TAXI DE SALVADOR - SINDITAXI',
-     'SIND. DAS INDUSTRIAS SIDERÚGICAS DO OESTE DE MINAS - SINDIGUSA',
-     'SIN- SISTEMAS INTELIGENTES LTDA - ME',
-     'SIM REDE DE POSTOS LTDA - VACARIA MONTE CLARO',
-     'SIM REDE DE POSTOS LTDA - TIO HUGO',
-     'SIM REDE DE POSTOS LTDA - SAO SEBASTIAO DO CAI RETRO',
-     'SIM REDE DE POSTOS LTDA - PORTAO HOFF',
-     'SIM REDE DE POSTOS LTDA - POA SOUZA REIS',
-     'SIM REDE DE POSTOS LTDA - POA FARRAPOS',
-     'SIM REDE DE POSTOS LTDA - POA ECOPOSTO',
-     'SIM REDE DE POSTOS LTDA - PASSO FUNDO BOQUEIRAO',
-     'SIM REDE DE POSTOS LTDA - NOVA STA RITA',
-     'SIM REDE DE POSTOS LTDA - NOVA SANTA RITA VALENTINA',
-     'SIM REDE DE POSTOS LTDA - NOVA SANTA RITA SCUDERIA',
-     'SIM REDE DE POSTOS LTDA - GARIBALDI BR470',
-     'SIM REDE DE POSTOS LTDA - FREE WAY',
-     'SIM REDE DE POSTOS LTDA - FL138 BARRA DO CHUI',
-     'SIM REDE DE POSTOS LTDA - FARROUPILHA SANTO ANTONIO',
-     'SIM REDE DE POSTOS LTDA - ESTRELA',
-     'SIM REDE DE POSTOS LTDA - CAXIAS SAO CIRO',
-     'SIM REDE DE POSTOS LTDA - CAXIAS PERIMETRAL NORTE',
-     'SIM REDE DE POSTOS LTDA - CAXIAS MATTEO',
-     'SIM REDE DE POSTOS LTDA - CAMAQUA PARADOURO',
-     'SIM REDE DE POSTOS LTDA - APARECIDA',
-     'SIM REDE DE POSTOS LTDA  - PORTAO HOFF',
-     'SIM REDE DE POSTOS LTDA  - POA CEARA',
-     'SIM REDE DE POSTOS LTDA  -  POA AV IPIRANGA',
-     'SIM REDE DE POSTO LTDA',
-     'SIM INTERNET LTDA',
-     'SILVIA REGINA DE ANDRADES - ME',
-     'SILVANO DE SOUSA COMERCIO DE COMBUSTIVEIS LTDA',
-     'SILVANA VALIERIS BUENO DE ALMEIDA',
-     'SILVANA BENETTI BISOTTO',
-     'SILVA SOBRINHO COMBUSTIVEIS LTDA',
-     'SILVA E SALES LTDA',
-     'SILVA COMBUSTIVEL LTDA',
-     'SILT SELF SERVICE EIRELI ME',
-     'SILT SELF SERVICE EIRELI EPP',
-     'SILAS PEREIRA DE ANDRADE 38528380106',
-     'SIG COMERCIO DE COMBUSTIVEIS LTDA',
-     'SIG COMERCIAL DE PAPEIS LTDA EPPI',
-     'SIDNEI GERALDO BERTOLDI',
-     'SIDNEI BANDEIRA ALVES - ME',
-     'SHOPPING VIA LAGOS',
-     'SHOPPING SHALOM COMERCIO E SERVICOS LTDA',
-     'SHOPPING COML ABAST DE PROD PETROLEO C S LTDA',
-     'SHOPPING COMERCIAL E ABAST DE PROD DE PETROLEO C S LTDA',
-     'SHELDA VANESSA RIBEIRO MAGALHAES 07401155370',
-     'SHELDA VANESSA RIBEIRO MAGALHAES',
-     'SHEKINAH LOCACAO DE VEICULOS LTDA',
-     'SHEKINAH LOCACAO DE VEICULOS EIRELI',
-     'SHARMILIE MARTINS ASPERA TAVARES',
-     'SG NACOES LTDA ME',
-     'SFAN PKS ALIMENTOS LTDA',
-     'SFAN PIER21 ALIMENTOS LTDA',
-     'SEVILHA PALACE HOTEL',
-     'SEVERINO S. LOPES & CIA. LTDA',
-     'SEVERINO S LOPES E CIA LTDA',
-     'SEVERINO ALMEIDA CHAVES POSTO CEARA 1',
-     'SETE COPA CONSULTORIA E ENGENHARIA LTDA',
-     'SERVIÇO DE ÁGUA E ESGOTO DE SOROCABA',
-     'SERVIÇO AUTONOMO DE AGUA E ESGOTO',
-     'SERVICO NACIONAL DE APRENDIZAGEM COMERCIAL:03682189000138',
-     'SERVICO NACIONAL DE APRENDIZAGEM COMERCIAL SENAC',
-     'SERVICO AUTONOMO MUNICIPAL DE AGUA E ESGOTO',
-     'SERVICO AUTONOMO DE AGUA E ESGOTO',
-     'SERVICENTRO NOSSA SENHORA APARECIDA LTDA',
-     'SERVICAR S/A',
-     'SERVHOST INTERNET LTDA ME',
-     'SERVCAR SOLUÇÕES AUTOMOTIVAS LTDA ME',
-     'SERVCAR SOLUCOES AUTOMOTIVAS LTDA',
-     'SERV-RIO TERCEIRIZACAO E SERVICOS LTDA',
-     'SERV RIO TERCEIRIZAÇÃO E SERVIÇOS',
-     'SERV CAR DERIVADOS DE PETROLEO LTDA',
-     'SERV AUTOM PONTA VERDE LTDA',
-     'SERTRAN-SERVICOS DE TRANSITO LTDA',
-     'SERRA DO RONCADOR HOTELARIA LTDA',
-     'SERIDO COMERCIAL DE COMBUSTIVEIS DOMINGOS LTDA',
-     'SERGIO MACHADO REIS EPP',
-     'SERGIO MACHADO REIS',
-     'SERGIO CLEBER DE SOUZA BARBOSA',
-     'SERCOMTEL',
-     'SERAUT AUTO POSTO LTDA',
-     'SEQUEIRA E SEQUEIRA COMERCIO DE EQUIPAMENTOS LTDA',
-     'SEQUEIRA & SEQUEIRA COMERCIO DE EQUIPAMENTOS LTDA',
-     'SEPTIMA FILMES LTDA EPP',
-     'SEPTIMA FILMES LTDA',
-     'SENS-COM E COMB E LUBRIFICANTES',
-     'SENNA LOCADORA DE AUTOMOVEIS LTDA',
-     'SENGE- SINDICATO DOS ENGENHEIROS',
-     'SENDINBLUE MARKETING',
-     'SENDAS DISTRIBUIDORA S/A',
-     'SENA COMUNICAÇÕES',
-     'SEMAE Serviço Municipal de Agua e Esgoto',
-     'SEM PARAR INSTITUIÇÃO DE PAGAMENTO LTDA',
-     'SEM FRONTEIRAS NEGOCIOS IMOBILIARIOS LTDA',
-     'SEM FRONTEIRAS - NEGÓCIOS IMOBILIÁRIOS LTDAS',
-     'SEISELLES DISTRIBUIÇÃO E LOGÍSTICA EIRELI',
-     'SEGPOL SERVICOS DE SEGURANCA ELETRONICA LTDA',
-     'SEG NATAL SIST ELETRONICO DE ALARME LTDA',
-     'SECRETARIA MUNICIPAL DE FAZENDA RJ',
-     'SECRETARIA MUNICIPAL DE FAZENDA',
-     'SECRETARIA MUNICIPAL DA FAZENDA SALVADOR',
-     'SECRETARIA DE ESTADO DE FAZENDA DA BAHIA',
-     'SECRETARIA DA FAZENDA',
-     'SECREL SOLUCOES DE INFORMATICA LTDA',
-     'SEC Móveis LTDA',
-     'SEC MOVEIS LTDA',
-     'SDB COMERCIO DE ALIMENTOS LTDA',
-     'SD COMBUSTIVEIS LTDA',
-     'SCM PARTICIPAÇÕES SA',
-     'SCHONS SCHONS LTDA',
-     'SCHEFFER INFORMÁTICA',
-     'SCB ADMINISTRACAO DE BENS LTDA',
-     'SCB - ADMINISTRACAO DE BENS LTDA.',
-     'SC COMBUSTIVEIS LTDA',
-     'SC ASSESSORIA DE COMUNICACAO LTDA',
-     'SBGRILL SALVADOR RESTAURANTE LTDA',
-     'SBB COMERCIO DE COMBUSTIVEL LTDA',
-     'SBA ABASTECEDORA E FRETES ROD. LTDA',
-     'SB SERVIÇOS EM TECNOLOGIA EIRELI- EPP',
-     'SB CHURRASCARIA LTDA',
-     'SAÍDA SUL POSTOS E SERVIÇOS LTDA',
-     'SAULO BATISTA CUNHA',
-     'SARAIVA COMÉRCIO DE COMBUSTÍVEIS LTDA',
-     'SARA ONLINE INFORMATICA LTDA ME',
-     'SAO VICENTE COMBUSTIVEIS LTDA',
-     'SAO SEBASTIAO LOCACAO DE VEICULOS E TURISMO LTDA',
-     'SAO PAULO AIRPORT RESTAURANTES LIMITADA',
-     'SAO JORGE AUTO POSTO LTDA',
-     'SAO DOMINGOS COM. DE PET. E LUB. LTDA',
-     'SAO DIMAS',
-     'SAO BERNARDO SERVICOS AUTOMOTIVOS LTDA',
-     'SANTOS SOUSA COMERCIO DE COMBUSTIVEIS LTDA - EPP',
-     'SANTOS SERVICOS GRAFICOS LTDA',
-     'SANTOS FERNANDES',
-     'SANTOS E SILVA LTDA',
-     'SANTO EXPEDITO COMERCIO DE PRODUTOS E UT',
-     'SANTO COMERCIO E IMPORTACAO DE PRODUTOSO ALIMENTI',
-     'SANTO AGOSTINHO LIVRARIA E PAPELARIA LTDA',
-     'SANTIAGO RODRIGUES GUEDES',
-     'SANTANA PETROLEO E PECAS LTDA',
-     'SANTA MARIA DERIVADOS DE PETROLEO LTDA',
-     'SANTA LOLA PAPELARIA E PRESENTE EIRELI ME',
-     'SANTA FE SERVICOS E PETROLEO LTDA',
-     'SANTA EUDOXIA COMERCIO DE COMBUSTIVEIS LTDA',
-     'SANTA BARBARA COMERCIO VAREJISTA DE COMBUSTIVEIS',
-     'SANTA BARBARA COMERCIO DE COMBUSTIVEIS LTDA',
-     'SANTA ANA ENERGIA EIRELI EPP',
-     'SANT ANA POSTO DE COMBUSTIVEL LTDA',
-     'SANEPAR',
-     'SANEP - SERVIÇO AUTONOMO DE SANEAMENTO DE PELOTAS',
-     'SANEAR',
-     'SANEAGO',
-     'SANDRO SANTOS OLIVEIRA JUNIOR',
-     'SANDRA REGINA BARAUNA RECALDE',
-     'SANDRA MARIA FONSECA NOGUEIRA ESTACIONAMENTOS LTDA',
-     'SAN REMO POSTO SERVICOS LTDA',
-     'SAN JUAN SAO PAULO HOTEL LTDA',
-     'SAN BERNARDO PARK HOTEL LTDA',
-     'SAMIA MARIA PINHEIRO BEZERRA',
-     'SALLUZ COMERCIO DE COMBUSTIVEIS LTDA',
-     'SALIM CAMAL COMERCIO E DERIVADOS DE PETROLEO LTDA',
-     'SAJ COMERCIO DE COMBUSTIVEIS LTDA',
-     'SAITO COMERCIO DE COMBUSTIVEIS LTDA',
-     'SAINT CLAIR DE CASTRO 84481927704 - DESTAK NA TV',
-     'SAIDA SUL POSTOS E SERVICOS LTDA',
-     'SAGUI IND.E COMERCIO DE ALIMENTOS',
-     'SAFETEC INFORMATICA LTDA',
-     'SAFERTAXI',
-     'SAFER SERVICOS DIGITAIS LTDA',
-     'SAFEBANK GESTAO DA TECNOLOGIA LTDA',
-     'SAFE BANK GESTÃO DA TECNOLOGIA LTDA',
-     'SAERP - SECRETARIA DE AGUA E ESGOTO DE RIBEIRÃO PRETO',
-     'SAERB - SERVIÇO DE AGUA E ESGOTO DE RIO BRANCO',
-     'SACOBRAS COMERCIO EMBALAGENS LTDA.',
-     'SABRINA BORGES ROQUETE DE MELO 02780381159',
-     'SABOR DI CODORNA RESTAURANTE LTDA - ME',
-     'SABESP - COMPANHIA DE SANEAMENTO BÁSICO DO ESTADO DE SÃO PAULO',
-     'SAAE',
-     'S.W.L.MODAS LTDA - EPP',
-     'S.M DA SILVA MELO',
-     'S.A. ATACADISTA DE ALIMENTOS LTDA',
-     'S.A O ESTADO DE S.PAULO',
-     'S. S. MOURA PUBLICIDADE',
-     'S&F SOLUÇÕES EM INFORMÁTICA LTDA',
-     'S&F SOLUCOES EM INFORMATICA LTDA',
-     'S S SOUSA',
-     'S P MAGALHAES EMPREENDIMENTOS LTDA',
-     'S NAFES M DA SILVA JUNIOR',
-     'S N Mídia, Produção e Assessoria de Marketing Ltda-ME',
-     'S M SBARDELOTTO',
-     'S M F DE SOUSA GOMES',
-     'S G R POLLON',
-     'S G DA SILVA MENESES EIRELI',
-     'S F RESTAURANTE LTDA',
-     'S E G PETROLEO LTDA',
-     'S C DE SOUSA FILHO LTDA',
-     'S C DE SOUSA FILHO EIRELI',
-     'S B COMERCIO DE PETROLEO LTDA',
-     'S A LEAL COMERCIAL DE ALIMENTOS',
-     'S & S Soluções em Ti LTDA',
-     'Rádio Tupinambá de Sobral Ltda.',
-     'Rádio Tapejara Ltda',
-     'Rádio Planetário Ltda',
-     'Rádio Emboabas de Minas Gerais - EPP',
-     'Rádio Difusora do Amazonas LTDA',
-     'Rádio Cultura de Arvorezinha Ltda',
-     'RÁDIO VALE DO RIO POTY LTDA',
-     'RÁDIO SÃO JUDAS TADEU FM LTDA',
-     'RÁDIO POR UM MUNDO MELHOR FUNDAÇÃO JOÃO XXIII',
-     'RÁDIO FM VALE DO SOL LTDA',
-     'RÁDIO FM RIO ACARAÚ DE TAMBORIL',
-     'RÁDIO EDUCADORA DE FREI PAULO LTDA',
-     'RÁDIO E TELEVISÃO GRAN DOURADOS  LTDA',
-     'RÁDIO CULTURA DE GUANAMBI LTDA',
-     'RÁDIO CLUBE DE ITAPICURU LTDA',
-     'RÁDIO BLAU NUNES LTDA',
-     'Ruy Santos Tourinho',
-     'Rubens de Carvalho Andrade',
-     'Rota do Oeste',
-     'Rota Locação de Veículos Eirele',
-     'Rosmer Palace Hotel',
-     'Rosilene Teixeira de Sena',
-     'Rosildo Bezerra Mendes',
-     'Roseane Matos',
-     'Ronda Eventos e Publicidade Ltda -ME',
-     'Rogério Piovesan',
-     'Rodrigo Poletto',
-     'Robótica na Lata - Tecnologia e robôs',
-     'Roberto Raniery de Aquino Paulino',
-     'Robert Alves Rebelo',
-     'Ricopy Comércio, Serviços e Locações Ltda',
-     'Ricardo & Lustosa Comercio e Serviços em Informática R & L Informática',
-     'Revisa Digital',
-     'Restaurante Zampronio e de Filtro',
-     'Reginaldo Castro Guimarães',
-     'Rede de Posto Conti Comigo Ltda',
-     'Rede Dom Pedro de Postos LTDA',
-     'Rede 4 Folhas Ltda - ME',
-     'Realizados Locar Locadora de Veiculos LTDA',
-     'RealSul TRansportes e Turismo Ltda - EPP',
-     'Razao Info Internet Ltda',
-     'Ranusia Moreira Gouveia de Moura e Oliveira',
-     'Ranielly Rodrigues Veloso',
-     'Radio FM veneza LTDA',
-     'RVT COM. DE DERIVADOS DE PETROLEO LTDA',
-     'RUPLAST INDUSTRIA E COMERCIO LTDA',
-     'RUDNICK E CIA LTDA',
-     'RUBENS FLAVIO DE ASSIS PORTO',
-     'RUBENS COITINHO DOS SANTOS - TUDORONDONIA',
-     'RT COMERCIO SERVICOS E TRANSPORTE DE COMBUSTIVEIS LTDA',
-     'RT COMERCIO DE COMBUSTIVEIS LTDA',
-     'RSTKI COMERCIO DE ALIMENTOS LTDA',
-     'RS PRODUTOS E SERVICOS EIRELI',
-     'RS IMOVEIS',
-     'RS Administradora de Condominios ltda',
-     'RR COMERCIO DE COMBUSTIVEIS EIRELI',
-     'RPW Monitoramento e Serviços LTDA - EPP',
-     'RPM REVENDEDORA DE PETROLEO MARACAJA',
-     'RPC INFORMÁTICA LTDA',
-     'RPB COMERCIO DE DERIVADOS DE PETROLEO LTDA ME',
-     'RPB AUTO POSTO LTDA',
-     'RPA COMERCIO DE COMBUSTIVEIS LIMEIRA LTDA',
-     'RP TECNOLOGIA LTDA',
-     'RP Comercio de Copiadoras - Ltda',
-     'RP ALIMENTACAO E DIVERSOES LTDA',
-     'ROZOSTOLATO COMERCIAL DE ALIMENTOS LTDA',
-     'ROYALE COMBUSTIVEIS E DERIVADOS LTDA',
-     'ROYAL TOWERS HOTEIS',
-     'ROVIN POSTOS DE SERVICOS LTDA',
-     'ROTULA DISTRIBUICAO, COM E IMP DE PROD LTDA',
-     'ROTA POA COMERCIO DE COMBUSTIVEIS LTDA',
-     'ROTA LOCACAO DE VEICULOS LTDA',
-     'ROTA 406 COMBUSTIVEIS LTDA',
-     'ROSO &amp; FILHOS LTDA',
-     'ROSANIA MARCIA SILVA MOTTA ME',
-     'ROSA DOS SANTOS REST LTDA',
-     'RORAIPETRO RORAIMA PETROLEO LTDA',
-     'ROQUE PROPAGANDA LTDA',
-     'ROQUE PAPELARIA LTDA',
-     'RONNE ROBERTO ALVES SAMPAIO ME',
-     'RONNE ROBERTO ALVES SAMPAIO',
-     'RONIMOTORS LOCAÇÔES LTDA',
-     'RONIER BARRETO TEIXEIRA DE SOUZA PRODUCOES',
-     'RONI COMERCIO DE COMBUSTIVEIS LTDA',
-     'RONDA EVENTOS E PUBLICIDADE LTDA',
-     'RONALDO SOARES DE MOURA',
-     'ROMEU EMERICK',
-     'ROMERO E SANTOS AUTO POSTO LTDA',
-     'ROMA TRUCK CENTER LTDA',
-     'ROMA SAT COMUNICACOES LTDA',
-     "ROGERIU'S HOTEL LTDA. - ME",
-     'ROGERIO RODRIGUES AVELINO',
-     'ROGERIO MAX DE ARAUJO EIRELI',
-     'ROGERIO DE ALMEIDA TCHE GAROTO - ME',
-     'ROGERIO CURI NAHAS',
-     'ROGER SOUZA DA SILVA',
-     'RODRIGUES TORRES COMERCIO E DERIVADOS DE PETROLEO LTDA',
-     'RODRIGUES TAUIL COMERCIAL DE ALIMENTOS LTDA ME',
-     'RODRIGO SOUSA DA SILVA 84896574168',
-     'RODRIGO RODRIGUES RIBEIRO',
-     'RODRIGO FERRAZ CUNHA',
-     'RODRIGO CAMPANELLA GONÇALVES  BARBOSA',
-     'RODRIGO BIONDI 00211013021',
-     'RODRIGO BENINCA MEDEIROS 26276905828',
-     'RODOVIA DAS COLINAS S/A',
-     'RODOVIA COMERCIO DE COMBUSTIVEIS E DERIVADOS LTDA',
-     'RODOSNACK RUBI LANCHONETE E RESTAURANTE LTDA',
-     'RODOPOSTO TURMALINA LTDA',
-     'RODOPOSTO SAO CARLOS LTDA',
-     'RODOPOSTO RUBI LT',
-     'RODOPOSTO CORAL LTDA',
-     'RODOPOSTO COMERCIO DE COMBUSTIVEIS LTDA 2',
-     'RODOPOSTO BANDEIRANTES SUL LTDA',
-     ...]
+     'valdiney maciel da silva']
 
 
 
-* **Temos alguns problemas aqui, erros de digitação, problemas de acentuação, casos onde foi acrescentado LTDA e S.A**
-* **Vamos remover todas as acentuações primeiro, depois os espaços e vamos remover tudo que contiver LTDA, S.A e depois dessas informações também para tentarmos corrigir a maior quantidade de informações incorretas.**
+* **Existem alguns problemas aqui: erros de digitação, texto com letras minúsculas e maiúsculas misturadas, problemas de acentuação e casos em que "LTDA" e "S.A." foram acrescentados e casos em que não foram.**
+* **Vamos remover todas as acentuações, e formatar tudo em letra maiúscula primeiro, depois os espaços e vamos remover tudo que contiver LTDA, S.A e depois dessas informações também para tentarmos corrigir a maior quantidade de informações incorretas.**
 
 
 ```python
+from unidecode import unidecode
 # Removendo todas as acentuações e os espaços duplos
-total.nomeFornecedor = [unidecode(fornecedor).strip() for fornecedor in total.nomeFornecedor]
+total.nomeFornecedor = [unidecode(fornecedor).strip().upper() for fornecedor in total.nomeFornecedor]
 ```
 
 
@@ -2280,31 +1206,31 @@ total.nomeFornecedor.value_counts().head(25)
 
 
 
-    TAM                                                              3113
-    GOL                                                              1428
-    031 - 302 NORTE - CASCOL COMBUSTIVEIS PARA VEICULOS               935
-    AZUL                                                              865
-    AUTO POSTO CINCO ESTRELAS                                         681
-    UBER DO BRASIL TECNOLOGIA                                         603
-    063 - 311 SUL - CASCOL COMBUSTIVEIS PARA VEICULOS                 597
-    WMS COMERCIO DE ARTIGOS DE PAPELARIA                              532
-    AUTO POSTO AEROPORTO                                              501
-    AUTO POSTO 303 NORTE                                              474
-    CELULAR FUNCIONAL                                                 464
-    Telefonica Brasil                                                 430
-    AMORETTO CAFES EXPRESSO                                           322
-    076 - MELHOR 10 - CASCOL COMBUSTIVEIS PARA VEICULOS               290
-    RAMAL                                                             271
+    TAM                                                              3185
+    GOL                                                              1385
+    031 - 302 NORTE - CASCOL COMBUSTIVEIS PARA VEICULOS               950
+    AZUL                                                              856
+    AUTO POSTO CINCO ESTRELAS                                         694
+    063 - 311 SUL - CASCOL COMBUSTIVEIS PARA VEICULOS                 603
+    UBER DO BRASIL TECNOLOGIA                                         582
+    TELEFONICA BRASIL                                                 581
+    WMS COMERCIO DE ARTIGOS DE PAPELARIA                              538
+    AUTO POSTO AEROPORTO                                              506
+    AUTO POSTO 303 NORTE                                              488
+    CELULAR FUNCIONAL                                                 457
+    CLARO NXT TELECOMUNICACOES                                        371
+    AMORETTO CAFES EXPRESSO                                           324
+    076 - MELHOR 10 - CASCOL COMBUSTIVEIS PARA VEICULOS               294
+    RAMAL                                                             270
+    CEMIG DISTRIBUICAO                                                259
     POSTO DA TORRE EIRELI EPP                                         256
-    CEMIG DISTRIBUICAO                                                254
-    Claro NXT Telecomunicacoes                                        243
+    AUTO POSTO CONCORDE                                               231
     DRA4 DERIVADOS DE PETROLEO                                        230
-    AUTO POSTO CONCORDE                                               228
-    CEEE - Companhia Estadual de Distribuicao de Energia Eletrica     213
-    COMPANHIA DE ELETRICIDADE DO ESTADO DA BAHIA                      209
-    BRASAL COMBUSTIVEIS                                               195
-    BELIZE COMPANY AUTO POSTO                                         176
-    AUTO POSTO JK                                                     166
+    CEEE - COMPANHIA ESTADUAL DE DISTRIBUICAO DE ENERGIA ELETRICA     217
+    COMPANHIA DE ELETRICIDADE DO ESTADO DA BAHIA                      213
+    BRASAL COMBUSTIVEIS                                               201
+    BELIZE COMPANY AUTO POSTO                                         172
+    AUTO POSTO 302 SUL                                                167
     Name: nomeFornecedor, dtype: int64
 
 
@@ -2318,19 +1244,7 @@ total.head()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2462,19 +1376,7 @@ total.head()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2635,7 +1537,7 @@ from sqlalchemy import create_engine
 
 ```python
 # Criando a conexão e o banco de dados gastos_deputados.db
-engine = create_engine('sqlite:///gastos_deputados.db')
+engine = create_engine('sqlite:///database/gastos_deputados.db')
 ```
 
 
@@ -2647,7 +1549,7 @@ total.to_sql('despesas_deputados', engine, index=False)
 
 
 
-    48861
+    49023
 
 
 
@@ -2674,19 +1576,7 @@ total.head()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2855,19 +1745,7 @@ gastos_deputados.head(10)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2879,13 +1757,25 @@ gastos_deputados.head(10)
   </thead>
   <tbody>
     <tr>
+      <th>334</th>
+      <td>Marcos Aurélio Sampaio</td>
+      <td>408771.46</td>
+      <td>408769.90</td>
+    </tr>
+    <tr>
       <th>491</th>
       <td>Vinicius Gurgel</td>
       <td>398189.31</td>
       <td>398189.31</td>
     </tr>
     <tr>
-      <th>142</th>
+      <th>453</th>
+      <td>Rubens Pereira Júnior</td>
+      <td>397659.14</td>
+      <td>397659.14</td>
+    </tr>
+    <tr>
+      <th>141</th>
       <td>Dilvanda Faro</td>
       <td>395749.85</td>
       <td>387140.52</td>
@@ -2897,46 +1787,34 @@ gastos_deputados.head(10)
       <td>395211.78</td>
     </tr>
     <tr>
-      <th>145</th>
+      <th>144</th>
       <td>Domingos Neto</td>
-      <td>392320.77</td>
-      <td>391597.82</td>
+      <td>390552.16</td>
+      <td>389829.21</td>
     </tr>
     <tr>
-      <th>335</th>
-      <td>Marcos Aurélio Sampaio</td>
-      <td>387464.80</td>
-      <td>387463.24</td>
-    </tr>
-    <tr>
-      <th>135</th>
+      <th>134</th>
       <td>Delegado Éder Mauro</td>
-      <td>381411.96</td>
-      <td>381411.96</td>
+      <td>387706.58</td>
+      <td>387706.58</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>Acácio Favacho</td>
-      <td>381184.42</td>
-      <td>381183.54</td>
+      <th>92</th>
+      <td>Cleber Verde</td>
+      <td>385865.57</td>
+      <td>385865.57</td>
     </tr>
     <tr>
       <th>489</th>
       <td>Vicentinho Júnior</td>
-      <td>380812.10</td>
-      <td>380812.10</td>
+      <td>378002.37</td>
+      <td>378002.37</td>
     </tr>
     <tr>
-      <th>43</th>
-      <td>Antônia Lúcia</td>
-      <td>370717.67</td>
-      <td>370475.29</td>
-    </tr>
-    <tr>
-      <th>149</th>
-      <td>Dr. Benjamim</td>
-      <td>369556.59</td>
-      <td>363802.38</td>
+      <th>2</th>
+      <td>Acácio Favacho</td>
+      <td>377485.95</td>
+      <td>377485.07</td>
     </tr>
   </tbody>
 </table>
@@ -2952,14 +1830,14 @@ gastos_deputados.head(10).sum()
 
 
 
-    nome              Vinicius GurgelDilvanda FaroÁtila LinsDomingos...
-    valorDocumento                                           3852765.96
-    valorLiquido                                             3837287.94
+    nome              Marcos Aurélio SampaioVinicius GurgelRubens Pe...
+    valorDocumento                                           3915340.88
+    valorLiquido                                             3905859.45
     dtype: object
 
 
 
-* **Os valores acumulados de despesas dos 10 deputados mais gastões no perído do Mês 2 ao final do Mês 9 chegaram na casa dos 3.850 milhão de Reais.**
+* **Os valores acumulados de despesas dos 10 deputados mais gastões no perído do Mês 2 ao final do Mês 9 chegaram na casa dos 3.900 milhão de Reais.**
 
 ### Os 10 Deputados que tiveram menos despesas durante todo o período?
 
@@ -2972,19 +1850,7 @@ gastos_deputados.tail(10)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3010,17 +1876,23 @@ gastos_deputados.tail(10)
     <tr>
       <th>318</th>
       <td>Lula da Fonte</td>
-      <td>20433.09</td>
-      <td>20188.30</td>
+      <td>20652.92</td>
+      <td>20408.13</td>
     </tr>
     <tr>
-      <th>187</th>
+      <th>365</th>
+      <td>Márcio Correa</td>
+      <td>20000.00</td>
+      <td>20000.00</td>
+    </tr>
+    <tr>
+      <th>186</th>
       <td>Fernanda Pessoa</td>
-      <td>19726.23</td>
-      <td>19701.24</td>
+      <td>19168.05</td>
+      <td>19143.06</td>
     </tr>
     <tr>
-      <th>350</th>
+      <th>349</th>
       <td>Mauricio do Vôlei</td>
       <td>18819.73</td>
       <td>18819.73</td>
@@ -3028,32 +1900,26 @@ gastos_deputados.tail(10)
     <tr>
       <th>274</th>
       <td>Juliana Cardoso</td>
-      <td>18602.40</td>
-      <td>18602.40</td>
+      <td>18725.47</td>
+      <td>18725.47</td>
     </tr>
     <tr>
       <th>414</th>
       <td>Priscila Costa</td>
-      <td>15531.74</td>
-      <td>15531.74</td>
+      <td>15806.95</td>
+      <td>15806.95</td>
     </tr>
     <tr>
-      <th>148</th>
+      <th>147</th>
       <td>Doutor Luizinho</td>
-      <td>14743.43</td>
-      <td>14743.43</td>
+      <td>15260.33</td>
+      <td>15260.33</td>
     </tr>
     <tr>
-      <th>118</th>
+      <th>117</th>
       <td>Daniela do Waguinho</td>
-      <td>7891.29</td>
-      <td>7883.21</td>
-    </tr>
-    <tr>
-      <th>81</th>
-      <td>Carmen Zanotto</td>
-      <td>5051.71</td>
-      <td>5051.71</td>
+      <td>13275.95</td>
+      <td>13267.87</td>
     </tr>
   </tbody>
 </table>
@@ -3090,19 +1956,7 @@ gastos_partidos.head()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3115,27 +1969,27 @@ gastos_partidos.head()
     <tr>
       <th>7</th>
       <td>PL</td>
-      <td>13154841.02</td>
+      <td>13184802.76</td>
     </tr>
     <tr>
       <th>14</th>
       <td>PT</td>
-      <td>8292440.67</td>
+      <td>8293306.06</td>
     </tr>
     <tr>
       <th>19</th>
       <td>UNIÃO</td>
-      <td>7834107.29</td>
+      <td>7828435.36</td>
     </tr>
     <tr>
       <th>9</th>
       <td>PP</td>
-      <td>6362652.02</td>
+      <td>6373352.30</td>
     </tr>
     <tr>
       <th>2</th>
       <td>MDB</td>
-      <td>5575425.19</td>
+      <td>5647371.69</td>
     </tr>
   </tbody>
 </table>
@@ -3158,19 +2012,7 @@ media_gastos_partidos.head()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3183,27 +2025,27 @@ media_gastos_partidos.head()
     <tr>
       <th>8</th>
       <td>PODE</td>
-      <td>1771.795991</td>
+      <td>1772.380275</td>
     </tr>
     <tr>
       <th>5</th>
       <td>PCdoB</td>
-      <td>1538.396029</td>
+      <td>1529.912014</td>
     </tr>
     <tr>
       <th>2</th>
       <td>MDB</td>
-      <td>1466.059740</td>
+      <td>1474.894670</td>
     </tr>
     <tr>
       <th>17</th>
       <td>REPUBLICANOS</td>
-      <td>1445.554773</td>
+      <td>1451.951481</td>
     </tr>
     <tr>
       <th>7</th>
       <td>PL</td>
-      <td>1402.734167</td>
+      <td>1400.403904</td>
     </tr>
   </tbody>
 </table>
@@ -3226,19 +2068,7 @@ gastos_partidos_mes
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -3251,47 +2081,47 @@ gastos_partidos_mes
     <tr>
       <th>0</th>
       <td>1.0</td>
-      <td>8824256.39</td>
+      <td>8837847.84</td>
     </tr>
     <tr>
       <th>1</th>
       <td>2.0</td>
-      <td>6588375.98</td>
+      <td>6501967.04</td>
     </tr>
     <tr>
       <th>2</th>
       <td>3.0</td>
-      <td>8203354.37</td>
+      <td>8077845.34</td>
     </tr>
     <tr>
       <th>3</th>
       <td>4.0</td>
-      <td>8330632.57</td>
+      <td>8194895.77</td>
     </tr>
     <tr>
       <th>4</th>
       <td>5.0</td>
-      <td>9076410.68</td>
+      <td>8967956.38</td>
     </tr>
     <tr>
       <th>5</th>
       <td>6.0</td>
-      <td>8112732.53</td>
+      <td>8066411.80</td>
     </tr>
     <tr>
       <th>6</th>
       <td>7.0</td>
-      <td>7909627.64</td>
+      <td>7901487.05</td>
     </tr>
     <tr>
       <th>7</th>
       <td>8.0</td>
-      <td>7334210.64</td>
+      <td>7611575.48</td>
     </tr>
     <tr>
       <th>8</th>
       <td>9.0</td>
-      <td>1532970.23</td>
+      <td>1924168.31</td>
     </tr>
   </tbody>
 </table>
@@ -3334,7 +2164,7 @@ gastos_partidos_mes[:-1]['valorDocumento'].mean()
 
 
 
-    8047450.100000001
+    8019998.3374999985
 
 
 
@@ -3350,3 +2180,8 @@ gastos_partidos_mes[:-1]['valorDocumento'].mean()
 **Com os dados já preparados, fiz extração do banco de dados para uma breve análise exploratória, para responder algumas questões sobre a distribuição dos partidos, as principais despesas e fornecedores, a média das despesas por partido e rank dos 10 deputados com maior e menor despesas.**
 
 [voltar](#ancora)
+
+
+```python
+
+```
