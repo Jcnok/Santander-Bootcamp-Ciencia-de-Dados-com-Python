@@ -17,6 +17,6 @@ Repositório com todos os projetos e desafios!
 * **Desafio de Código**: [Condicionalmente Rico](https://github.com/Jcnok/Santander-Bootcamp-Ciencia-de-Dados-com-Python/tree/main/DCs#desafio-condicionalmente-rico);
 * **Desafio de Código**: [Juros Compostos](https://github.com/Jcnok/Santander-Bootcamp-Ciencia-de-Dados-com-Python/tree/main/DCs#desafio-juros-compostos);
 * **Desafio de Código**: [O Grande Depósito](https://github.com/Jcnok/Santander-Bootcamp-Ciencia-de-Dados-com-Python/tree/main/DCs#desafio-o-grande-dep%C3%B3sito);
-* **Desafio de Projeto**: [Criando um Relatório de Vendas Elegante com Power BI]("em desenvolvimento");
+* **Desafio de Projeto**: [Criando um Relatório de Vendas Elegante com Power BI](https://github.com/Jcnok/Santander-Bootcamp-Ciencia-de-Dados-com-Python/tree/main/DP3#desafio-criando-um-relat%C3%B3rio-de-vendas-elegante-com-power-bi);
 * **Desafio de Projeto**: [Processando e Transformando Dados com Power BI]("Em desenvolvimento");
 
